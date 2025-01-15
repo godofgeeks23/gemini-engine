@@ -11,7 +11,7 @@ async function getGithubData() {
 
 async function main() {
   const githubData = await getGithubData();
-  
+
   const prompt = `I am providing you with github data and stats of user ${githubUsername}. Roast this user as brutally as you can. Here is the data:
     ${JSON.stringify(githubData)}
     `;
