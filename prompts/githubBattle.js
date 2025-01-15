@@ -13,7 +13,7 @@ async function getGithubData(username) {
 async function main() {
   const githubData1 = await getGithubData(githubUsername1);
   const githubData2 = await getGithubData(githubUsername2);
-  
+
   const prompt = `I am providing you with github data and stats of 2 users. Compare and roast them as brutally as you can. 
   
   Here is the data of user 1 ${githubUsername1}:
