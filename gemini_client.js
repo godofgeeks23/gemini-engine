@@ -30,6 +30,7 @@ async function generate(prompt) {
   }
 }
 
+// uncomment for testing
 // async function main() {
 //   const prompt = "Introduce yourself in 20 words or less.";
 //   const result = await generate(prompt);
