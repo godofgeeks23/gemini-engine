@@ -24,7 +24,7 @@ async function generate(prompt) {
     keyIndex = (keyIndex + 1) % GEMINI_API_KEYS.length;
     if (keyIndex === initialKeyIndex) {
       console.log("All keys used, exiting...");
-      return "No more keys available";
+      return "No more API keys available";
     }
     return generate(prompt);
   }
