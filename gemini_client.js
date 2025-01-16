@@ -10,7 +10,7 @@ const initialKeyIndex = keyIndex;
 
 async function generate(prompt) {
   const randomKey = GEMINI_API_KEYS[keyIndex];
-  console.log("Using key:", keyIndex);
+  console.log("Using API key:", keyIndex);
 
   const genAI = new GoogleGenerativeAI(randomKey);
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
