@@ -13,8 +13,7 @@ async function main() {
   const githubData = await getGithubData();
 
   const prompt = `I am providing you with github data and stats of user ${githubUsername}. Roast this user as brutally as you can. Here is the data:
-    ${JSON.stringify(githubData)}
-    `;
+    ${JSON.stringify(githubData)}    `;
 
   const result = await generate(prompt);
   console.log(result);
