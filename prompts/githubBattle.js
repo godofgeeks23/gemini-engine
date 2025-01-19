@@ -20,8 +20,7 @@ async function main() {
     ${JSON.stringify(githubData1)}
 
   and here is the data of user 2 ${githubUsername2}:
-    ${JSON.stringify(githubData2)}
-    `;
+    ${JSON.stringify(githubData2)}    `;
 
   const result = await generate(prompt);
   console.log(result);
