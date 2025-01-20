@@ -1,0 +1,9 @@
+services:
+  backend-server:
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    restart: always
+    command: node server
