@@ -2,9 +2,10 @@
 
 const express = require("express");
 const generate = require("./gemini_client");
-const app = express();
 const bodyParser = require("body-parser");
+const app = express();
 require("dotenv").config();
+
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
