@@ -22,5 +22,5 @@ app.post("/generate", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Webserver listening on port ${PORT}`);
+  console.log(`Web server active on port ${PORT}`);
 });
