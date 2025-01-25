@@ -1,4 +1,4 @@
-// for a wrapper api for gemini client
+// wrapper REST api for gemini client
 
 const express = require("express");
 const generate = require("./gemini_client");
