@@ -66,6 +66,12 @@ GEMINI_API_KEYS="key1 key2 key3"
 
 ## Usage
 
+### Using Docker
+
+   ```bash
+   docker compose up
+   ```
+
 1. Run the script with:
    ```bash
    npm index.js
