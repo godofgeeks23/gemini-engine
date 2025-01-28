@@ -4,7 +4,7 @@ require("dotenv").config();
 
 const GEMINI_API_KEYS = process.env.GEMINI_API_KEYS.split(" ");
 
-// use a random index to start with
+// use a random index to start with for the first key 
 var keyIndex = Math.floor(Math.random() * GEMINI_API_KEYS.length);
 const initialKeyIndex = keyIndex;
 
