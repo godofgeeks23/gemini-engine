@@ -8,12 +8,14 @@ const GEMINI_API_KEYS = process.env.GEMINI_API_KEYS.split(" ");
 var keyIndex = Math.floor(Math.random() * GEMINI_API_KEYS.length);
 const initialKeyIndex = keyIndex;
 
+const model_name = "gemini-1.5-flash";
+
 async function generate(prompt) {
   const randomKey = GEMINI_API_KEYS[keyIndex];
   console.log("Using API key:", keyIndex);
 
   const genAI = new GoogleGenerativeAI(randomKey);
-  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+  const model = genAI.getGenerativeModel({ model: model_name });
 
   try {
     const result = await model.generateContent(prompt);
