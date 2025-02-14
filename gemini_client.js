@@ -23,7 +23,7 @@ async function generate(prompt) {
     return result.response.text();
   } catch (e) {
     console.error(e);
-    console.log("Error occured, trying again with a new key...");
+    console.log("ERROR!, trying again with a new key...");
     keyIndex = (keyIndex + 1) % GEMINI_API_KEYS.length;
     if (keyIndex === initialKeyIndex) {
       console.log("All API keys used, exiting...");
