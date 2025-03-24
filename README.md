@@ -75,11 +75,17 @@ The project now supports image generation and editing using Gemini's multimodal 
 
 ### Scripts
 
+- Update the `prompt` variable with your image idea:
+  ```js
+  const prompt = "A futuristic city skyline at sunset";
+  ```
+
 #### 1. `photo_editor.js` — Edit a Single Image
 
 - Update the image name in:
   ```js
-  const imagePath = 'images/your-image.jpg';
+  // path of image to edit - EDIT THIS
+  const imagePath = "images/" + "elon.png";
   ```
 - Run:
   ```bash
@@ -90,8 +96,9 @@ The project now supports image generation and editing using Gemini's multimodal 
 
 - Update paths for two images:
   ```js
-  const imagePath1 = 'images/image1.jpg';
-  const imagePath2 = 'images/image2.jpg';
+  // path of images to edit - EDIT THIS
+  const imagePath1 = "images/" + "samay.png";
+  const imagePath2 = "images/" + "elon.png";
   ```
 - Run:
   ```bash
@@ -100,11 +107,8 @@ The project now supports image generation and editing using Gemini's multimodal 
 
 #### 3. `image_generator.js` — Generate Image from Prompt
 
-- Update the `prompt` variable with your image idea:
-  ```js
-  const prompt = "A futuristic city skyline at sunset";
-  ```
 - Run:
+
   ```bash
   node image_generator.js
   ```
@@ -112,7 +116,6 @@ The project now supports image generation and editing using Gemini's multimodal 
 - The output image will be saved or displayed depending on your implementation.
 
 ---
-
 
 ## Usage - Text Generation
 
@@ -127,12 +130,11 @@ The project now supports image generation and editing using Gemini's multimodal 
    - If an error occurred and the script is trying the next key.
    - The final generated text from the model.
 
-
 ### Using Docker (under development)
 
-   ```bash
-   docker compose up
-   ```
+```bash
+docker compose up
+```
 
 ## How It Works
 
