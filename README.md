@@ -9,7 +9,7 @@ This project demonstrates how to interact with the [Google Generative AI Node.js
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [Configuration](#configuration)
-- [Usage - Image Generation](#Usage-Image-Generation-and-Editing)
+- [Usage - Image Generation](#Usage---Image-Generation-and-Editing)
 - [Usage - Text Generation](#Usage---Text-Generation)
 - [How It Works](#how-it-works)
 
