@@ -38,7 +38,8 @@ async function generate(prompt) {
       } else if (part.inlineData) {
         const imageData = part.inlineData.data;
         const buffer = Buffer.from(imageData, "base64");
-        const outputFileName = "images/" + `photo-${generateRandomString()}.png`;
+        const outputFileName =
+          "images/" + `photo-${generateRandomString()}.png`;
         fs.writeFileSync(outputFileName, buffer);
         console.log(`Image saved as ${outputFileName}`);
       }
@@ -57,12 +58,15 @@ async function generate(prompt) {
 
 // uncomment below code for testing ----------------------
 async function main() {
-  const prompt =
-    "Hi, can you remove the blurry pole in this picture?";
+  const prompt = "Hi, can you bring these 2 persons in 1 photo?";
   // Load the image from the local file system
-  const imagePath = "images/" + "testimg4.jpeg";
-  const imageData = fs.readFileSync(imagePath);
-  const base64Image = imageData.toString("base64");
+  const imagePath1 = "images/" + "samay.png";
+  const imageData1 = fs.readFileSync(imagePath1);
+  const base64Image1 = imageData1.toString("base64");
+
+  const imagePath2 = "images/" + "elon.png";
+  const imageData2 = fs.readFileSync(imagePath2);
+  const base64Image2 = imageData2.toString("base64");
 
   // Prepare the content parts
   const contents = [
@@ -70,7 +74,13 @@ async function main() {
     {
       inlineData: {
         mimeType: "image/png",
-        data: base64Image,
+        data: base64Image1,
+      },
+    },
+    {
+      inlineData: {
+        mimeType: "image/png",
+        data: base64Image2,
       },
     },
   ];
