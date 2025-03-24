@@ -1,4 +1,4 @@
-# Gemini 1.5 Flash Key-Rotation Example
+# Gemini Content (Text/Image) Generation with Auto-Rotation
 
 This project demonstrates how to interact with the [Google Generative AI Node.js library](https://www.npmjs.com/package/@google/generative-ai) while automatically rotating through multiple Gemini API keys (for example, in case of usage limits or other errors). If a key fails, the script will try the next key, and so on, until it either succeeds or exhausts all keys.
 
