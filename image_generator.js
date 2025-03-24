@@ -8,9 +8,16 @@ const GEMINI_API_KEYS = process.env.GEMINI_API_KEYS.split(" ");
 var keyIndex = Math.floor(Math.random() * GEMINI_API_KEYS.length);
 const initialKeyIndex = keyIndex;
 
-// const model_name = "gemini-1.5-flash";
-// const model_name = "gemini-2.0-flash";
 const model_name = "gemini-2.0-flash-exp-image-generation";
+
+// enter your prompt here - EDIT THIS
+const prompt =
+  "Hi, can you create a 3d rendered image of a pig with wings and a top hat flying over a happy futuristic scifi city with lots of greenery?";
+
+// function to generate a random string of 5 characters
+function generateRandomString() {
+  return Math.random().toString(36).substring(2, 7);
+}
 
 async function generate(prompt) {
   const randomKey = GEMINI_API_KEYS[keyIndex];
@@ -33,8 +40,11 @@ async function generate(prompt) {
       } else if (part.inlineData) {
         const imageData = part.inlineData.data;
         const buffer = Buffer.from(imageData, "base64");
-        fs.writeFileSync("gemini-native-image.png", buffer);
-        console.log("Image saved as gemini-native-image.png");
+
+        const outputFileName = `images/generated-image-${generateRandomString()}.png`;
+
+        fs.writeFileSync(outputFileName, buffer);
+        console.log(`Image saved as ${outputFileName}`);
       }
     }
   } catch (e) {
@@ -49,10 +59,7 @@ async function generate(prompt) {
   }
 }
 
-// uncomment below code for testing ----------------------
 async function main() {
-  const prompt =
-    "Hi, can you create a 3d rendered image of a pig with wings and a top hat flying over a happy futuristic scifi city with lots of greenery?";
   const result = await generate(prompt);
   console.log(result);
 }

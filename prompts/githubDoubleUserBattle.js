@@ -1,7 +1,7 @@
 const generate = require("../gemini_client");
 
 const githubUsername1 = "godofgeeks23";
-const githubUsername2 = "kartikmehta8";
+const githubUsername2 = "torvalds";
 
 async function getGithubData(username) {
   const githubUrl = "https://api.github.com/users/" + username;

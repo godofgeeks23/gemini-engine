@@ -8,9 +8,13 @@ const GEMINI_API_KEYS = process.env.GEMINI_API_KEYS.split(" ");
 var keyIndex = Math.floor(Math.random() * GEMINI_API_KEYS.length);
 const initialKeyIndex = keyIndex;
 
-// const model_name = "gemini-1.5-flash";
-// const model_name = "gemini-2.0-flash";
 const model_name = "gemini-2.0-flash-exp-image-generation";
+
+// enter your prompt here - EDIT THIS
+const prompt = "Hi, can you add eye-glasses to this person in picture?";
+
+// path of image to edit - EDIT THIS
+const imagePath = "images/" + "elon.png";
 
 // function to generate a random string of 5 characters
 function generateRandomString() {
@@ -38,7 +42,8 @@ async function generate(prompt) {
       } else if (part.inlineData) {
         const imageData = part.inlineData.data;
         const buffer = Buffer.from(imageData, "base64");
-        const outputFileName = "images/" + `photo-${generateRandomString()}.png`;
+        const outputFileName =
+          "images/" + `photo-${generateRandomString()}.png`;
         fs.writeFileSync(outputFileName, buffer);
         console.log(`Image saved as ${outputFileName}`);
       }
@@ -55,12 +60,8 @@ async function generate(prompt) {
   }
 }
 
-// uncomment below code for testing ----------------------
 async function main() {
-  const prompt =
-    "Hi, can you remove the blurry pole in this picture?";
   // Load the image from the local file system
-  const imagePath = "images/" + "testimg4.jpeg";
   const imageData = fs.readFileSync(imagePath);
   const base64Image = imageData.toString("base64");
 

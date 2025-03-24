@@ -30,6 +30,7 @@ This project demonstrates how to interact with the [Google Generative AI Node.js
 - **Auto-Rotation**: If the current key fails (e.g., due to quota limits or invalid key), the script tries the next key in the list.
 - **Loop Prevention**: If we circle back to our initial key, the script stops and logs that no more keys are available.
 - **Simple Prompt Interface**: Modify the `prompt` variable in `main()` to generate a different type of content.
+- **Image Generation**: The script can also generate and edit images
 
 ## Prerequisites
 
@@ -64,13 +65,56 @@ Example `.env` file:
 GEMINI_API_KEYS="key1 key2 key3"
 ```
 
-## Usage
+## Usage - Image Generation and Editing
 
-### Using Docker
+The project now supports image generation and editing using Gemini's multimodal capabilities.
 
-   ```bash
-   docker compose up
-   ```
+### Directory Structure
+
+- Place your existing input images in the `images/` directory.
+
+### Scripts
+
+#### 1. `photo_editor.js` — Edit a Single Image
+
+- Update the image name in:
+  ```js
+  const imagePath = 'images/your-image.jpg';
+  ```
+- Run:
+  ```bash
+  node photo_editor.js
+  ```
+
+#### 2. `multiple_photo_editor.js` — Combine Two Images
+
+- Update paths for two images:
+  ```js
+  const imagePath1 = 'images/image1.jpg';
+  const imagePath2 = 'images/image2.jpg';
+  ```
+- Run:
+  ```bash
+  node multiple_photo_editor.js
+  ```
+
+#### 3. `image_generator.js` — Generate Image from Prompt
+
+- Update the `prompt` variable with your image idea:
+  ```js
+  const prompt = "A futuristic city skyline at sunset";
+  ```
+- Run:
+  ```bash
+  node image_generator.js
+  ```
+
+- The output image will be saved or displayed depending on your implementation.
+
+---
+
+
+## Usage - Text Generation
 
 ### Using Node.js
 
@@ -82,6 +126,13 @@ GEMINI_API_KEYS="key1 key2 key3"
    - Which key is being used.
    - If an error occurred and the script is trying the next key.
    - The final generated text from the model.
+
+
+### Using Docker (under development)
+
+   ```bash
+   docker compose up
+   ```
 
 ## How It Works
 
@@ -97,16 +148,7 @@ var keyIndex = Math.floor(Math.random() * GEMINI_API_KEYS.length);
 This ensures we pick a different key each time the script runs.
 
 3. Generating Content
-
-<!-- code -->
-
-```javascript
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-const result = await model.generateContent(prompt);
-return result.response.text();
-```
-
-We create a “Generative Model” for gemini-1.5-flash and call generateContent(prompt) to get our AI-generated text.
+   We use the `@google/generative-ai` package to generate content.
 
 4. Catching Errors and Rotating Keys
    If an error occurs, the script increments the key index (mod the length of the array) and tries again. Once we circle back to our initial key, we exit.
