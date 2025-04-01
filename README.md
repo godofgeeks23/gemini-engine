@@ -35,7 +35,7 @@ This project demonstrates how to interact with the [Google Generative AI Node.js
 
 ## Prerequisites
 
-1. **Node.js** version 18 or higher.
+1. **Node.js** version >=20.
 2. **NPM** or **Yarn** package manager.
 3. **One or more** valid Gemini API keys.
 
