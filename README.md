@@ -52,13 +52,15 @@ This project demonstrates how to interact with the [Google Generative AI Node.js
 
 1.  Create a .env file in the project root (or use any environment variable injection method you prefer).
 
-2.  Add the following line to your .env file, including all your API keys separated by spaces:
+2. Refer sample `sample.env` file.
+
+3.  Add the following line to your .env file, including all your API keys separated by spaces:
 
     ```bash
     GEMINI_API_KEYS="YOUR_GEMINI_KEY_1 YOUR_GEMINI_KEY_2 YOUR_GEMINI_KEY_3"
     ```
 
-3.  (Optional) If you have additional environment variables or configurations, set them here as well.
+4.  (Optional) If you have additional environment variables or configurations, set them here as well.
 
 Example `.env` file:
 
