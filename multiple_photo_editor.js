@@ -71,7 +71,6 @@ async function main() {
   const imageData2 = fs.readFileSync(imagePath2);
   const base64Image2 = imageData2.toString("base64");
 
-  // Prepare the content parts
   const contents = [
     { text: prompt },
     {
