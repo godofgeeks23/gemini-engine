@@ -65,6 +65,5 @@ async function main() {
 }
 
 main();
-// ----------------------------------
 
 module.exports = generate;
