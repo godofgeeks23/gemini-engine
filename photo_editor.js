@@ -11,10 +11,10 @@ const initialKeyIndex = keyIndex;
 const model_name = "gemini-2.0-flash-exp-image-generation";
 
 // enter your prompt here - EDIT THIS
-const prompt = "Hi, can you add eye-glasses to this person in picture?";
+const prompt = "can you turn this picture into one in studio ghibli style?";
 
 // path of image to edit - EDIT THIS
-const imagePath = "images/" + "elon.png";
+const imagePath = "images/" + "avi.JPG";
 
 // function to generate a random string of 5 characters
 function generateRandomString() {
@@ -65,7 +65,6 @@ async function main() {
   const imageData = fs.readFileSync(imagePath);
   const base64Image = imageData.toString("base64");
 
-  // Prepare the content parts
   const contents = [
     { text: prompt },
     {
