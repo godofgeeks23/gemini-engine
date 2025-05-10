@@ -10,7 +10,7 @@ const initialKeyIndex = keyIndex;
 
 const model_name = "gemini-2.0-flash-exp-image-generation";
 
-// enter your prompt here - EDIT THIS
+// EDIT THIS - enter your prompt here
 const prompt =
   "Hi, can you create a 3d rendered image of a pig with wings and a top hat flying over a happy futuristic scifi city with lots of greenery?";
 
