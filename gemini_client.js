@@ -8,7 +8,7 @@ const GEMINI_API_KEYS = process.env.GEMINI_API_KEYS.split(" ");
 var keyIndex = Math.floor(Math.random() * GEMINI_API_KEYS.length);
 const initialKeyIndex = keyIndex;
 
-const model_name = "gemini-2.0-flash";
+const model_name = "gemini-2.5-flash";
 
 async function generate(prompt) {
   const randomKey = GEMINI_API_KEYS[keyIndex];
@@ -32,7 +32,7 @@ async function generate(prompt) {
   }
 }
 
-// // uncomment below code for testing ----------------------
+// uncomment below code for dev ----------------------
 // async function main() {
 //   const prompt = "Introduce yourself in 20 words maximum.";
 //   const result = await generate(prompt);
