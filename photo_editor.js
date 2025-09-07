@@ -8,7 +8,7 @@ const GEMINI_API_KEYS = process.env.GEMINI_API_KEYS.split(" ");
 var keyIndex = Math.floor(Math.random() * GEMINI_API_KEYS.length);
 const initialKeyIndex = keyIndex;
 
-const model_name = "gemini-2.0-flash-exp-image-generation";
+const model_name = "gemini-2.5-flash-image-preview";
 
 // enter your prompt here - EDIT THIS
 const prompt = "can you turn this picture into one in studio ghibli style?";
