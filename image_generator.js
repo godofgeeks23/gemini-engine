@@ -59,6 +59,10 @@ async function generate(prompt) {
   }
 }
 
+async function generateImage(prompt, imagePath) {
+  
+}
+
 async function main() {
   const result = await generate(prompt);
   console.log(result);
