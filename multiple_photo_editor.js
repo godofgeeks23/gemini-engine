@@ -62,7 +62,6 @@ async function generate(prompt) {
 }
 
 async function main() {
-  // Load the images from the local file system
   const imageData1 = fs.readFileSync(imagePath1);
   const base64Image1 = imageData1.toString("base64");
 
