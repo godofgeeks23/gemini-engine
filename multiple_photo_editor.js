@@ -17,7 +17,6 @@ const prompt = "Can you bring these 2 persons in 1 photo?";
 const imagePath1 = "images/" + "samay.png";
 const imagePath2 = "images/" + "elon.png";
 
-// function to generate a random string of 5 characters
 function generateRandomString() {
   return Math.random().toString(36).substring(2, 7);
 }
