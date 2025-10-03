@@ -10,7 +10,7 @@ const initialKeyIndex = keyIndex;
 
 const model_name = "gemini-2.0-flash-exp-image-generation";
 
-// enter your prompt here - EDIT THIS
+// your prompt here - EDIT THIS
 const prompt = "Can you bring these 2 persons in 1 photo?";
 
 // path of images to edit - EDIT THIS
